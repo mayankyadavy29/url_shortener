@@ -1,0 +1,30 @@
+{% extends 'url_shortener_app/base.html' %}
+{% block body %}
+<div class="container mt-3 mb-3">
+    <div class="row text-center">
+        <div class="col-md-6 mt-3">
+            <div class="d-block p-2 bg-dark text-white">Long URL</div>
+        </div>
+        <div class="col-md-6 mt-3">
+            <div class="d-block p-2 bg-success text-white">{{url_info.long_url}}</div>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-6 mt-3">
+            <div class="d-block p-2 bg-dark text-white">Short URL</div>
+        </div>
+        <div class="col-md-6 mt-3">
+            <div class="d-block p-2 bg-success text-white">{{url_info.short_url}}</div>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-6 mt-3">
+            <div class="d-block p-2 bg-dark text-white">Time To Live</div>
+        </div>
+        <div class="col-md-6 mt-3">
+            <div class="d-block p-2 bg-success text-black">{{url_info.ttl}}</div>
+        </div>
+    </div>
+    <a class="btn btn-danger m-3" href="{% url 'url_shortener_app:delete' url_info.id %}">Delete</a>
+</div>
+{% endblock %}

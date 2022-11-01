@@ -1,0 +1,6 @@
+{% extends 'url_shortener_app/base.html' %}
+{% block body %}
+    <h2>Are you sure you want to delete this book ?</h2>
+    <a class="btn btn-secondary" href="{% url 'url_shortener_app:detail' url_id %}">Cancel</a>
+    <a class="btn btn-danger" href="{% url 'url_shortener_app:cnfrm_delete' url_id %}">Delete</a>
+{% endblock %}

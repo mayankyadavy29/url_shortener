@@ -1,0 +1,21 @@
+{% extends 'url_shortener_app/base.html' %}
+{% block body %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container mt-3 mb-3">
+        <div class="form-group">
+            <label for="long_url">Actual URL</label>
+            <input type="text" class="form-control" name="long_url" id="long_url" placeholder="Enter actual URL">
+        </div>
+<!--        <div class="form-group">-->
+<!--            <label for="short_url">Custom Short URL (Leave this blank if you want automated short URL)</label>-->
+<!--            <input type="text" class="form-control" name="short_url" id="short_url" placeholder="Enter custom short URL">-->
+<!--        </div>-->
+        <div class="form-group">
+            <label for="ttl">Time To Live (in seconds)</label>
+            <input type="text" class="form-control" name="ttl" id="ttl" placeholder="Enter Time To Live for this URL">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock %}
